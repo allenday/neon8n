@@ -1,5 +1,6 @@
 FROM naskio/n8n-python:latest-debian
 
-RUN cd /usr/lib/node_modules/n8n && npm install n8n-nodes-changed
-RUN cd /usr/lib/node_modules/n8n && npm install n8n-nodes-updates
-RUN cd /usr/lib/node_modules/n8n && npm install n8n-nodes-influxdb
+WORKDIR /usr/lib/node_modules/n8n
+RUN npm install n8n-nodes-changed
+RUN npm install n8n-nodes-updates
+RUN npm install n8n-nodes-influxdb
